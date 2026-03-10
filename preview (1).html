@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI', sans-serif;
+background:#141414;
+color:white;
+text-align:center;
+}
+
+/* Opening Page */
+
+#opening{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+h1{
+font-size:42px;
+color:#ff7aa8;
+}
+
+button{
+padding:12px 24px;
+margin:10px;
+background:#ff7aa8;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+border-radius:20px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* Special Message */
+
+#specialMessage{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.messageCard{
+background:#1f1f1f;
+padding:30px;
+border-radius:12px;
+max-width:420px;
+}
+
+/* Profile */
+
+#profileScreen{
+display:none;
+height:100vh;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.profile img{
+width:140px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.profile p{
+font-size:20px;
+margin-top:10px;
+}
+
+/* Main Page */
+
+#mainPage{
+display:none;
+padding:30px;
+}
+
+h2{
+color:#ff7aa8;
+}
+
+.row{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:18px;
+margin-top:20px;
+}
+
+.thumb{
+width:190px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.thumb:hover{
+transform:scale(1.05);
+}
+
+.thumb img{
+width:100%;
+border-radius:10px;
+}
+
+/* Popup */
+
+#photoMessage{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.popupCard{
+background:#1f1f1f;
+padding:25px;
+border-radius:10px;
+max-width:350px;
+font-size:18px;
+}
+
+/* Video */
+
+video{
+width:80%;
+margin-top:30px;
+border-radius:10px;
+}
+
+/* Final Message */
+
+.finalMessage{
+max-width:520px;
+margin:auto;
+margin-top:20px;
+font-size:18px;
+line-height:1.6;
+color:#f2c3d4;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Opening Page -->
+
+<div id="opening">
+
+<h1>Happy Birthday My Love ❤️</h1>
+
+<button onclick="openMessage()">Special Birthday Message</button>
+
+<button onclick="goProfile()">Start Watching</button>
+
+</div>
+
+
+<!-- Special Message -->
+
+<div id="specialMessage" onclick="closeMessage()">
+
+<div class="messageCard">
+
+<h2>My Message For You 💌</h2>
+
+<p>
+Happy Birthday ❤️  
+You are such a special person to me and I’m really grateful for you.
+</p>
+
+<p>
+I made this little surprise just for you.  
+I hope it makes you smile today.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- Profile Screen -->
+
+<div id="profileScreen">
+
+<h2>Who's Watching?</h2>
+
+<div class="profile" onclick="enterSite()">
+<img src="profile.jpeg">
+<p>My baby</p>
+</div>
+
+</div>
+
+
+<!-- Main Page -->
+
+<div id="mainPage">
+
+<h2>My Birthday Boy</h2>
+
+<div class="row">
+
+<div class="thumb" onclick="showPhoto('You look cute from always ❤️')">
+<img src="photo1.jpeg">
+</div>
+
+<div class="thumb" onclick="showPhoto('This picture always makes me smile')">
+<img src="photo2.jpeg">
+</div>
+
+<div class="thumb" onclick="showPhoto('Your smile is my favorite thing')">
+<img src="photo3.jpeg">
+</div>
+
+<div class="thumb" onclick="showPhoto('One and only of my favorite pictures of us')">
+<img src="photo4.jpeg">
+</div>
+
+</div>
+
+
+<h2>A Song For You</h2>
+
+<video controls>
+<source src="song.mp4" type="video/mp4">
+</video>
+
+
+<h2>Birthday Message</h2>
+
+<p class="finalMessage">
+Happy Birthday, my love. ❤️
+
+I wish I could be there with you today — to see your smile in person, hug you tightly, and celebrate this day the way you truly deserve. Being far away from you on such a special day is honestly the hardest part of loving you from a distance.
+
+But even though miles separate us, my heart is always with you. Every day I’m grateful that you are in my life. You make my days brighter, my worries lighter, and my world a little more beautiful just by being you.
+
+Sometimes the distance feels long, but loving you always feels easy. You are worth every moment of waiting and every mile between us.
+
+On your birthday, I just want you to know how special you are to me. I hope this year brings you happiness, success, peace, and everything your heart wishes for. And I hope one day soon we won’t have to celebrate birthdays through screens, but side by side.
+
+Until that day comes, please remember that someone far away is thinking about you today, smiling because you exist, and loving you more than words can explain.
+  and also still proccessing ki itna khubsurat insan sach mai Mera hai.
+
+Happy Birthday again.
+I love you so much my Bebu. ❤️
+
+</p>
+
+</div>
+
+
+<!-- Photo Message Popup -->
+
+<div id="photoMessage" onclick="closePhoto()">
+
+<div class="popupCard">
+
+<p id="photoText"></p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openMessage(){
+document.getElementById("specialMessage").style.display="flex"
+}
+
+function closeMessage(){
+document.getElementById("specialMessage").style.display="none"
+}
+
+function goProfile(){
+document.getElementById("opening").style.display="none"
+document.getElementById("profileScreen").style.display="flex"
+}
+
+function enterSite(){
+document.getElementById("profileScreen").style.display="none"
+document.getElementById("mainPage").style.display="block"
+}
+
+function showPhoto(msg){
+document.getElementById("photoMessage").style.display="flex"
+document.getElementById("photoText").innerText=msg
+}
+
+function closePhoto(){
+document.getElementById("photoMessage").style.display="none"
+}
+
+</script>
+
+</body>
+</html>
